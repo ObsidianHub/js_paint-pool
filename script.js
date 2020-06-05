@@ -86,4 +86,20 @@ function loop(time_stamp) {
       }
     }
   }
+
+  for (let index = particles.length - 1; index > -1; --index) {
+    let particle = particles[index];
+
+    particle.updatePosition();
+
+    if (particle.a <= 0) pool.push(particles.splice(index, 1)[0]);
+
+    context.beginPath();
+    context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+    context.fillStyle = particle.color;
+    context.fill();
+    context.closePath();
+  }
+
+  output.innerHTML = "pool: " + pool.length + "<br>live: " + particles.length;
 }
