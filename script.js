@@ -12,4 +12,8 @@ class Particle {
     this.rgb_string = rgb_string;
     this.a = 1;
   }
+
+  get color() {
+    return "rgba(" + this.rgb_string + "," + this.a + ")";
+  }
 }
