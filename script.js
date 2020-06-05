@@ -66,4 +66,24 @@ function loop(time_stamp) {
 
   output.style.color = "rgb(" + color.getRGBString() + ")";
   document.body.style.backgroundColor = output.style.color;
+
+  if (pointer.down) {
+    for (let index = 0; index < 2; ++index) {
+      let particle = pool.pop();
+
+      if (particle != undefined) {
+        particle.reset(pointer.x, pointer.y, color.getRGBString());
+        particles.push(particle);
+      } else {
+        particles.push(
+          new Particle(
+            pointer.x,
+            pointer.y,
+            Math.floor(Math.random() * 10 + 10),
+            color.getRGBString()
+          )
+        );
+      }
+    }
+  }
 }
