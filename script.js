@@ -50,3 +50,7 @@ var context = document
   .getElementById("canvas")
   .getContext("2d", { alpha: false });
 var output = document.getElementById("p");
+
+var pointer = { x: 0, y: 0, down: false };
+var color = new Color(0, 0, 0);
+var direction = 0;
