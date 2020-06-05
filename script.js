@@ -125,3 +125,23 @@ function mouseDownMoveUp(event) {
       pointer.down = false;
   }
 }
+
+function touchEndMoveStart(event) {
+  event.preventDefault();
+
+  var rect = context.canvas.getBoundingClientRect();
+  var touch = event.targetTouches[0];
+
+  if (touch) {
+    pointer.x = touch.clientX - rect.left;
+    pointer.y = touch.clientY - rect.top;
+  }
+
+  switch (event.type) {
+    case "touchstart":
+      pointer.down = true;
+      break;
+    case "touchend":
+      pointer.down = false;
+  }
+}
