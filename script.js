@@ -45,3 +45,8 @@ class Color {
 
 var pool = new Array();
 var particles = new Array();
+
+var context = document
+  .getElementById("canvas")
+  .getContext("2d", { alpha: false });
+var output = document.getElementById("p");
