@@ -108,3 +108,20 @@ function resize(event) {
   context.canvas.height = document.documentElement.clientHeight - 16;
   context.canvas.width = document.documentElement.clientWidth - 16;
 }
+
+function mouseDownMoveUp(event) {
+  event.preventDefault();
+
+  var rect = context.canvas.getBoundingClientRect();
+
+  pointer.x = event.clientX - rect.left;
+  pointer.y = event.clientY - rect.top;
+
+  switch (event.type) {
+    case "mousedown":
+      pointer.down = true;
+      break;
+    case "mouseup":
+      pointer.down = false;
+  }
+}
