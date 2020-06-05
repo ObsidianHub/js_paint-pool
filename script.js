@@ -151,3 +151,7 @@ window.addEventListener("resize", resize);
 window.addEventListener("mousedown", mouseDownMoveUp);
 window.addEventListener("mousemove", mouseDownMoveUp);
 window.addEventListener("mouseup", mouseDownMoveUp);
+
+window.addEventListener("touchend", touchEndMoveStart);
+window.addEventListener("touchmove", touchEndMoveStart);
+window.addEventListener("touchstart", touchEndMoveStart);
