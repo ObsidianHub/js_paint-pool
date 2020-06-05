@@ -54,3 +54,16 @@ var output = document.getElementById("p");
 var pointer = { x: 0, y: 0, down: false };
 var color = new Color(0, 0, 0);
 var direction = 0;
+
+function loop(time_stamp) {
+  window.requestAnimationFrame(loop);
+
+  context.fillStyle = "#ffffff";
+  context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+
+  direction += 0.01;
+  color.gradualShift(direction);
+
+  output.style.color = "rgb(" + color.getRGBString() + ")";
+  document.body.style.backgroundColor = output.style.color;
+}
