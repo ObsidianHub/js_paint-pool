@@ -103,3 +103,8 @@ function loop(time_stamp) {
 
   output.innerHTML = "pool: " + pool.length + "<br>live: " + particles.length;
 }
+
+function resize(event) {
+  context.canvas.height = document.documentElement.clientHeight - 16;
+  context.canvas.width = document.documentElement.clientWidth - 16;
+}
