@@ -145,3 +145,9 @@ function touchEndMoveStart(event) {
       pointer.down = false;
   }
 }
+
+window.addEventListener("resize", resize);
+
+window.addEventListener("mousedown", mouseDownMoveUp);
+window.addEventListener("mousemove", mouseDownMoveUp);
+window.addEventListener("mouseup", mouseDownMoveUp);
