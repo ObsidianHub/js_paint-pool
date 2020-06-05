@@ -42,3 +42,6 @@ class Color {
     this.b = Math.floor(Math.abs(Math.sin(direction * 0.5) * 256));
   }
 }
+
+var pool = new Array();
+var particles = new Array();
