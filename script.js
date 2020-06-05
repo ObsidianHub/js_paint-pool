@@ -31,4 +31,8 @@ class Color {
     this.g = g;
     this.b = b;
   }
+
+  getRGBString() {
+    return String(this.r + "," + this.g + "," + this.b);
+  }
 }
