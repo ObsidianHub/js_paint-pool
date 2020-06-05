@@ -16,4 +16,11 @@ class Particle {
   get color() {
     return "rgba(" + this.rgb_string + "," + this.a + ")";
   }
+
+  updatePosition() {
+    this.a -= 0.01;
+
+    this.x += this.vx;
+    this.y += this.vy;
+  }
 }
